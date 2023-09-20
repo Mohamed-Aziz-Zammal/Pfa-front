@@ -1,0 +1,48 @@
+<div class="forum">
+    <div class="forum-header">
+        <div class="links">
+        <h3 class="h3" (click)="getAllCommentairesByPatient(patient.id)" >Mes publications</h3>
+        <h3 class="h3" (click)="ngOnInit()" > publications</h3>
+    </div>
+
+        <img class="add" src="https://www.clker.com/cliparts/A/P/L/b/V/G/blue-plus-sign-md.png" alt="" (click)="AddComent()">
+    </div>
+
+
+<div class="comment" *ngIf="addComent">
+    <h4>Exprimez vous ! </h4>
+    <textarea  name="" id="" cols="30" rows="10" [(ngModel)]="commentaire.texte"></textarea>
+    <br>
+    <div class="bouttons">
+        <button type="button" class="btn btn-outline-success" (click)="addCommentaire()">ok</button>
+        <button type="button" class="btn btn-outline-danger" (click)="AddComent()">non</button>
+    </div>
+</div>
+<div class="content">
+    <div class="post" *ngFor="let commentaire of commentaires">
+        <img src="https://th.bing.com/th/id/R.2e4a52126f09800d89085ec106ec3a47?rik=fQBLEP%2fl2ooYtA&riu=http%3a%2f%2fgetdrawings.com%2ffree-icon%2fperson-icon-clipart-68.png&ehk=vrkNnhbm5RlhnUMq7n9uGNGMx9KLuciISaZMmV%2bye7E%3d&risl=&pid=ImgRaw&r=0" alt="">
+        <div class="post-content">
+            <h2> {{commentaire.patient.nom}} {{commentaire.patient.prenom}}  </h2>
+            <p> {{commentaire.texte}}</p>
+
+            <div class="comment" *ngIf="commentaire.edit">
+                <textarea  name="" id=""  class="editForm" [(ngModel)]="commentaire.texte">{{commentaire.texte}}</textarea>
+                <br>
+                <div class="bouttons">
+                    <button type="button" class="btn btn-outline-success" (click)="updateCommentaire(commentaire.id,commentaire)">Modifier</button>
+                    <button type="button" class="btn btn-outline-danger" (click)="commentaire.edit=!commentaire.edit">Annuler</button>
+                </div>
+            </div>
+
+
+            <div class="actions" *ngIf="profile">
+                <i class='fas fa-edit' style='color:rgb(44, 173, 243)' (click)="commentaire.edit=!commentaire.edit"></i>
+                <i class="fa fa-trash" style='color:orangered' (click)="onDeleteCommentaire(commentaire.id)"></i>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+</div>

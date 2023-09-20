@@ -1,0 +1,9 @@
+<div class="all">
+<h2 style="text-align: center;">Si votre score est inférieur à 70% vous avez une forte possibilité d'être dyslexique</h2>
+<div class="ress" *ngFor="let test of tests" >
+    <h4>Dans ce test j'ai eu  </h4>
+    <div class="progress">  
+        <div class="progress-bar" role="progressbar" [style.width.%]="test.score " aria-valuenow="25"  aria-valuemin="0" aria-valuemax="100">{{test.score}}%</div>
+    </div>    
+</div>
+</div>

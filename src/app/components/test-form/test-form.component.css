@@ -1,0 +1,55 @@
+.question{
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+
+}
+h3{
+    margin: 20px;
+
+
+}
+
+.orange{
+    background-color: #f6721a;
+    color: white;
+}
+.answers{
+    margin: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.option{
+    margin: 10px;
+    height: 150px;
+    width: 30%;
+    background-color: aliceblue;
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  transition: background-color 0.3s;
+}
+
+
+
+.next{
+    margin: 16px;
+    align-self: flex-end;
+    background-color: orangered;
+    border-radius: 25px;
+    width: 80px;
+    height: 30px;
+    color: aliceblue;
+    font-size: large;
+    text-align: center;
+    cursor: pointer;
+}
+.ress{
+    margin: 20px;
+}

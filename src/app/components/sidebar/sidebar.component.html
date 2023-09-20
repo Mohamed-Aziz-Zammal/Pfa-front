@@ -1,0 +1,21 @@
+
+<div class="sidebar-profile">
+  <img src="https://th.bing.com/th/id/R.2e4a52126f09800d89085ec106ec3a47?rik=fQBLEP%2fl2ooYtA&riu=http%3a%2f%2fgetdrawings.com%2ffree-icon%2fperson-icon-clipart-68.png&ehk=vrkNnhbm5RlhnUMq7n9uGNGMx9KLuciISaZMmV%2bye7E%3d&risl=&pid=ImgRaw&r=0" alt="">
+  <h2>{{patient.nom}} {{patient.prenom}} </h2>
+</div>
+
+<mat-divider></mat-divider>
+
+<ul class="sidenav-nav">
+  <li class="sidenav-nav-item" *ngFor="let data of navData">
+      <a  class="sidenav-nav-link " [routerLink]="[data.routeLink]">
+         <!-- <i class="sidenav-link-icon" [ngClass]="data.icon"  [ngStyle]="{'color': data.color}" ></i>-->
+
+          <span class="material-icons" [ngStyle]="{'color': data.color}">
+            {{data.icon}}
+        </span>
+        <span class="sidenav-link-text">{{ data.Label }}</span>
+      </a>
+      <mat-divider></mat-divider>
+  </li>
+</ul>

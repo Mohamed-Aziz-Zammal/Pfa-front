@@ -1,0 +1,67 @@
+<div class="container">
+<h2>Ma Fiche</h2>
+<div class="form-container">
+       <form>
+              <div class="line">
+                     <div class="field">
+                            <label for="n">Nom</label>
+                            <input type="text" id="n" placeholder="entrez votre nom svp" required [value]="patient.nom" readonly>
+                     </div>
+                     <div class="field">
+                            <label for="p">Prenom</label>
+                            <input type="text" id="p" placeholder="entrez votre Prenom svp" required [value]="patient.prenom" readonly>  
+                     </div>      
+              </div>
+              <br>
+              <div class="line">
+                     <div class="field">
+                            <label for="m">E-mail</label>
+                            <input type="text" id="m" placeholder="entrez votre nom svp"  pattern=".+@gmail.com" required [value]="patient.mail" readonly> 
+                     </div>
+                     <div class="field">
+                            <label for="t">Tel</label>
+                            <input type="text" id="t" placeholder="entrez votre tel svp" required  [(ngModel)]="fiche.tel" [ngModelOptions]="{standalone: true}" >
+                     </div>            
+              </div>
+              <br>
+              <div class="field">
+                     <label  >Date de Naissance: "mm/dd/yyyy"</label>
+                     
+                     <input type="date" id="d" [(ngModel)]="fiche.date" [ngModelOptions]="{standalone: true  }"  > 
+              </div>
+              <br>
+              <hr/>
+              <div class="field">
+                     <label for="pde"  >Niveau d'étude : {{fiche.niveau_etude}}</label>
+                     <select id="pde" (change)="onselect($event)" [(ngModel)]="selectedItem" [ngModelOptions]="{standalone: true}"  >
+       
+                        <option *ngFor="let i of tabetude" [ngValue]="i" [value]="i" >{{i}}</option>
+                        
+                     </select>
+              </div>
+              <br>
+                 J'ai des troubles de
+                 <br>
+                
+                 <input type="checkbox" id="vehicle1" name="vehicle1" [(ngModel)]="fiche.trouble_lecture">
+<label for="vehicle1">Lecture</label><br>
+<input type="checkbox" id="vehicle2" name="vehicle2" [(ngModel)]="fiche.trouble_ecriture">
+<label for="vehicle2">Ecriture</label><br>
+<input type="checkbox" id="vehicle3" name="vehicle3" [(ngModel)]="fiche.trouble_concentration">
+<label for="vehicle3">Concentration</label>
+<hr/>
+Vos parents sont de la même famille.
+<br>
+<input type="radio" id="html" name="fav_language" [value]="true" [(ngModel)]="fiche.parents">
+<label for="html">Oui</label><br>
+<input type="radio" id="css" name="fav_language" [value]="false" [(ngModel)]="fiche.parents">
+<label for="css">Non</label><br>
+
+                 <hr>
+                 
+                             
+</form>
+
+</div>
+<button type="button" class="btn btn-outline-success"(click)="updateFiche( )" >Modifier</button>
+</div>

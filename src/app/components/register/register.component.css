@@ -1,0 +1,15 @@
+.centered-div {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    max-width: 400px; /* Optional: Set the maximum width of the centered div */
+    margin-left: 35%;
+    margin-top: 5%;
+    
+  }
+
+  .form-outline{
+    text-align: left !important;
+  }
